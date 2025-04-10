@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <ul>
+    <li class="<%= 'active' if current_page?(root_path) %>">
+      <%= link_to 'Search', root_path %>
+    </li>
+    <li class="<%= 'active' if current_page?(history_path) %>">
+      <%= link_to 'History', history_path %>
+    </li>
+    <li class="<%= 'active' if current_page?(analytics_path) %>">
+      <%= link_to 'Analytics', analytics_path %>
+    </li>
+  </ul>
+</nav>
+
