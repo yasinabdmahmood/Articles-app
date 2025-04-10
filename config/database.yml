@@ -80,9 +80,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: my_search_app_production
-    username: my_search_app
-    password: <%= ENV["MY_SEARCH_APP_DATABASE_PASSWORD"] %>
+    database: <%= ENV["DATABASE_NAME"] %>
+    username: <%= ENV["DATABASE_USERNAME"] %>
+    password: <%= ENV["DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: my_search_app_production_cache
