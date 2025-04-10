@@ -1,13 +1,14 @@
 import { TabulatorFull } from "tabulator-tables"
+import ldloader from "ldloader";
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOMContentLoaded for history");
 
+    const ldld = new ldloader({ root: "#my-loader" }); 
     const getHistoryObj = {
         url: "/getHistory",
         method: "GET",
         callback: (response) => {
-            console.log("Response:", response);
+            ldld.off();
             let table = new TabulatorFull("#history-table", {
                 data: response.result,
                 layout: "fitColumns",
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Handle the error here
         }
     };
-
+    ldld.on();
     httpRequest(getHistoryObj);
 });
 

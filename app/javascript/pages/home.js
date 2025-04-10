@@ -1,10 +1,15 @@
 // app/javascript/pages/home.js
+import ldloader from "ldloader";
 
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
 
-    if (!searchInput) return;
+    const ldld = new ldloader({ root: "#my-loader" }); 
+    
+    
 
+    if (!searchInput) return;
+    
 
     let timeoutId;
 
@@ -18,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 data: { text: searchInput.value },
                 callback: (articles) => {
                   const resultsDiv = document.getElementById("results");
+                  ldld.off();
                   resultsDiv.innerHTML = ""; // Clear previous results
           
                   if (articles.length === 0) {
@@ -44,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Handle the error here
                 }
             };
-
+            ldld.on();
             httpRequest(httpobject);
         }, 1000); // 1000ms = 1 second delay
     });
