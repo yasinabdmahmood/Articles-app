@@ -8,7 +8,7 @@ This app captures user search queries in real time, stores only meaningful (fina
 
 ## 🚀 Live Demo
 
-👉 [Live Demo (Coming Soon)](https://articles.yyaassiinn.xyz/)
+👉 [Live Demo](https://articles.yyaassiinn.xyz/)
 
 ---
 
